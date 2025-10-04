@@ -1,0 +1,9 @@
+customer_id,plan_type,age,gender,avg_minutes,num_logins,support_tickets,amount_paid,auto_renew,churned
+101,Basic,24,Male,150,10,1,15.0,True,0
+102,Standard,32,Female,220,15,2,20.0,True,0
+103,Premium,45,Female,310,22,0,25.0,False,1
+104,Basic,28,Male,180,9,3,15.0,True,0
+105,Premium,39,Male,290,18,1,30.0,True,0
+106,Standard,35,Female,200,12,1,20.0,False,1
+107,Basic,22,Male,160,8,2,10.0,True,1
+108,Premium,41,Female,330,25,0,25.0,True,0
