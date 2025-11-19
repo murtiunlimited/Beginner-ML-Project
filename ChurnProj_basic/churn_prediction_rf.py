@@ -10,10 +10,7 @@ y = df['churned']
 X = pd.get_dummies(X, drop_first=True)
 columns_used_for_model = X.columns
 
-
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
-
-
 
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
@@ -23,14 +20,12 @@ new_customers = pd.read_csv("new_customers.csv")
 if "churned" in new_customers.columns: 
     new_customers = new_customers.drop(columns=["churned"])
 
-
 new_customers_encoded = pd.get_dummies(new_customers)
 new_customers_encoded = new_customers_encoded.reindex(columns=columns_used_for_model, fill_value=0)
 churn_predictions = model.predict(new_customers_encoded)
 new_customers["predicted_churn"] = churn_predictions
 new_customers.to_csv("churn_predictions.csv", index=False)
 print("Predictions saved to churn_predictions.csv")
-
 
 y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
