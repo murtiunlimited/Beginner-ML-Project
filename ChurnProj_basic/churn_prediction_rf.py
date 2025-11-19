@@ -11,11 +11,8 @@ X = pd.get_dummies(X, drop_first=True)
 columns_used_for_model = X.columns
 
 
-result = train_test_split(X, y, test_size=0.25, random_state=42)
-X_train = result[0]
-X_test = result[1]
-y_train = result[2]
-y_test = result[3]
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
+
 
 
 model = RandomForestClassifier(n_estimators=100, random_state=42)
